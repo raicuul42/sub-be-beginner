@@ -33,8 +33,8 @@ const addBook = async (request, h) => {
 
   const { nanoid } = await import('nanoid')
   const id = nanoid(20)
-  const insertDate = new Date().toISOString()
-  const upDate = insertDate
+  const insertedAt = new Date().toISOString()
+  const updatedAt = insertDate
   const finished = readPage === pageCount
 
   const newBook = {
@@ -167,7 +167,7 @@ const upBook = (request, h) => {
 
   const response = h.response({
     status: 'fail',
-    message: 'BGagal memperbarui buku. Id tidak ditemukan'
+    message: 'Gagal memperbarui buku. Id tidak ditemukan'
   })
   response.code(404)
   return response
